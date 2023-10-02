@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  ""
-date:   2023-09-21 14:24:47 +0200
-categories: 
+title:  "Leveraging ARM Virtual Hardware (AVH) to Run Microcontroller Code in the Cloud"
+date:   2023-10-01 14:24:47 +0200
+categories: AWS, ECU, virtualization
 ---
 # Leveraging ARM Virtual Hardware (AVH) to Run Microcontroller Code in the Cloud
 
