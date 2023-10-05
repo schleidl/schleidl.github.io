@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "VirtIO in context of ECU virtualization on AWS"
+date:   2023-10-05 10:24:47 +0200
+categories: AWS, ECU, virtualization, virtio
+---
+
+Virtio is an [OASIS Standard](https://docs.oasis-open.org/virtio/virtio/v1.1/csprd01/virtio-v1.1-csprd01.html) describing a family of virtio devices. Virtio is implementing an architecture paravirtualizing hardware devices as described [here](https://developer.ibm.com/articles/l-virtio/). Which is the best description of virtio I have found on the Internet. 
+
+Virtio devices can be addressed and used as if they are real devices.  Virtio is the standard IO virtualization framework for the Linux KVM (Kernel-based Virtual Machine) hypervisor. A hyperviror is providing a thing management layer providing functionality to run multiple virtual machines on one piece of hardware. Since virtio is providing a specification for a number of different device types (block storage, network) making the use of different frameworks for different types of devices obsolete.
+
+Apart from that virtio is considered to provide better [performance](https://wiki.libvirt.org/Virtio.html) belonging to the family of virtualization fremworks employing paravirtualization techniques compared to fully virtualized abstractions of devices.
