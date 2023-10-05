@@ -4,7 +4,6 @@ title:  "Leveraging ARM Virtual Hardware (AVH) to Run Microcontroller Code in th
 date:   2023-10-01 14:24:47 +0200
 categories: AWS, ECU, virtualization
 ---
-# Leveraging ARM Virtual Hardware (AVH) to Run Microcontroller Code in the Cloud
 
 With this post I intend to shed some light into the seemingly dark jungle of ARM SoC and CPU types, particularly in the automotive industry. In addition, it hints at how to run microcontroller application code on cloud servers using QEMU or ARM Virtual Hardware. 
 
