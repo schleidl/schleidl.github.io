@@ -4,8 +4,6 @@ title:  "Leveraging ARM Virtual Hardware (AVH) to Run Microcontroller Code in th
 date:   2023-10-01 14:24:47 +0200
 categories: AWS, ECU, virtualization
 ---
-# Exploring ARM SoC and CPU Types in the Automotive Industry
-
 With this post, I intend to shed light on the seemingly dark jungle of ARM SoC and CPU types, particularly in the automotive industry. Additionally, it hints at how to run microcontroller application code on cloud servers using [QEMU](https://www.qemu.org/) or [ARM Virtual Hardware](https://www.arm.com/products/development-tools/simulation/virtual-hardware).
 
 ## Accelerating ECU Development with Virtualization 
