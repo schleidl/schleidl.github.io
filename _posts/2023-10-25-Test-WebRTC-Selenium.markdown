@@ -10,7 +10,11 @@ categories: AWS, CDK, CloudFormation
 
 Using both tools we are able to create a test that can react to the content of a WebRTC stream. The test can for example check if a video stream is showing a certain object or if a certain sound is played. 
 
-This is a minimal example showing the interaction between selenium and OpenCV. It opens a browser, takes a screenshot, detects faces in the screenshot and draws rectangles around them. To make it work you need to download the [haarcascade_frontalface_default.xml](https://raw.githubusercontent.com/kipr/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml) file and place it in the same directory as the script. 
+This is a minimal example showing the interaction between selenium and OpenCV. It opens a browser, takes a screenshot, detects faces in the screenshot and draws rectangles around them. To make it work you need to download the [haarcascade_frontalface_default.xml](https://raw.githubusercontent.com/kipr/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml) file and place it in the same directory as the script and install the selenium and openCV modules.
+
+```bash:
+pip install selenium opencv-python
+```
 
 ```python:
 from selenium import webdriver
