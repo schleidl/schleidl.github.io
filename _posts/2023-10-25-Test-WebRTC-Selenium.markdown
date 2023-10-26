@@ -49,3 +49,4 @@ cv2.imwrite("faces_detected.png", image)
 
 # Close the browser
 driver.quit()
+```
