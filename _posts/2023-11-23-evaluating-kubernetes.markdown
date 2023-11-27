@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Business Impact of Introducing Kubernetes"
+date:   2023-11-23 21:27:38 +0200
+categories: Kubernetes
+---
+
 **Kubernetes Setup Time and Its Impact on Market Entry:**
 
 When considering Kubernetes for application development, it's essential to assess how its setup time impacts the project's time-to-market. In addition subsequent maintenance of the respective infrastructure needs to be considered. Kubernetes, known for its robust container orchestration capabilities, involves a detailed and time-consuming setup process. This article focuses on analyzing this aspect and its implications on reaching the market efficiently.
