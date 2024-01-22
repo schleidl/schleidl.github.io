@@ -17,3 +17,9 @@ In constrast to that, a cloud data-center does not have network zones with firew
 ![cloud mental model](/docs/assets/images/cloud.png)
 
 Each customer is able to design what traffic can enter and leave a VPC. At AWS Security Groups are the means to restrict and allow traffic to and from the resources assigned to a VPC, for example. 
+
+Additional resources: 
+
+An white paper with details of how virtual networking is implemented at AWS using the AWS Nitro System: https://docs.aws.amazon.com/pdfs/whitepapers/latest/security-design-of-aws-nitro-system/security-design-of-aws-nitro-system.pdf
+
+A paper showing how AWS used formal verification methods to proof the correctness of the boot code for the AWS Nitro System: https://link.springer.com/chapter/10.1007/978-3-319-96142-2_28
