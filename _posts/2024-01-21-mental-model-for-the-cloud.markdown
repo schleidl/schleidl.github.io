@@ -14,6 +14,6 @@ The only way to communicate between network zones is via the firewalls between t
 
 In constrast to that, a cloud data-center does not have network zones with firewalls between them. Networking is fully virtualized. Each customer can create multiple virtual network zones called virtual private clouds or VPCs. An arbitrary number of resources like VMs can be put into these VPCs. In the image below the VMs marked with a dot with the same color are assigned to the same VPC. It is possible that different VMs running on the same physical host are assigned to different VPCs.  
 
-![cloud mental model](cloud.png)
+![cloud mental model](/docs/assets/images/cloud.png)
 
 Each customer is able to design what traffic can enter and leave a VPC. At AWS Security Groups are the means to restrict and allow traffic to and from the resources assigned to a VPC, for example. 
