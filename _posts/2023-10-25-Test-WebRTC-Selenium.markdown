@@ -4,7 +4,6 @@ title:  "Conceptual: How to test and react to the content of a WebRTC stream"
 date:   2023-10-25 21:27:38 +0200
 categories: AWS, CDK, CloudFormation
 ---
-<img src="banner.png" alt="Banner" width="500"/>
 
 [WebRTC](https://webrtc.org/) is a Technology I came across recently. It can for example be used to stream video and audio from a server like an EC2 instance to a browser. In addition WebRTC provides a channel to send generic data between the server and the browser. Creating applications using WebRTC bears the problem of how to create automated UI tests reacing to the content of the stream. This post describes a concept how to do this using Selenium and OpenCV. 
 
