@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Is a Multi-Cloud Strategy Just About Using Multiple Clouds?"
-date:   2024-07-09 10:24:47 +0200
+date:   2024-03-05 10:24:47 +0200
 categories: AWS, Multi-Region
 ---
 
