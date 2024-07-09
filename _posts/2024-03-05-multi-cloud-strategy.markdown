@@ -1,13 +1,13 @@
 ---
 layout: post
 title:  "Is a Multi-Cloud Strategy Just About Using Multiple Clouds?"
-date:   2024-03-05 10:24:47 +0200
+date:   2024-07-09 10:24:47 +0200
 categories: AWS, Multi-Region
 ---
 
 Many companies today have contracts with multiple cloud providers. There are several reasons for this trend. The primary reason I hear is that companies don't want to be locked into just one cloud provider and become 100% dependent on it. Additionally, they want to leverage the unique features and strengths of different cloud providers and be prepared for unforeseen events, such as a service from one provider being shut down on short notice. However, the investment required to technically maintain multiple cloud providers and make them accessible on demand to their developers is significant. This expenditure can reduce a company's ability to innovate and drive the development of its core products. Being locked into one cloud provider might be the least of a company's concerns if it can't keep up with the pace of innovation of its competitors. This article presents a people-centric approach to multi-cloud, showing how to stay competitive and leverage multiple cloud providers' strengths simultaneously.
 
-Following a strategy of delivering high-quality software faster, traditional companies in any industry struggle to catch up and accelerate. Many traditional companies improve yearly in delivering high-quality software. However, digital-native companies still have the ability accelerate faster, making it nearly impossible for traditional companies to overtake them. 
+Following a strategy of delivering high-quality software faster, traditional companies in any industry struggle to catch up and accelerate. Many traditional companies improve yearly in delivering high-quality software. However, digital-native companies still have the ability to accelerate faster, making it nearly impossible for traditional companies to overtake them.
 
 Giving software developers the option to choose between cloud providers involves investing in setting up and maintaining multiple cloud environments. These environments must meet the company's security, compliance rules, regulations, and best practices. For example, a microservice runtime like Kubernetes might need to be maintained multiple times, or a VPN connection to a company-owned data center might need to be set up and maintained multiple times. All of this comes at a cost of time and money.
 
@@ -15,7 +15,7 @@ Considering the bigger picture, many companies are better off going all-in with 
 
 Some companies focus on providing what they believe are the right tools for their developers to thrive and create business value. However, I propose turning the focus to the developers themselves. Developers typically know best how to achieve their tasks when they have clear and measurable goals. Companies should listen to their developers, remove roadblocks, and provide them with the freedom, time, commitment, and learning opportunities they need.
 
-A concise multi-cloud strategy could be:
+    A concise multi-cloud strategy could be:
 
     ACME Corp (Multi)-Cloud Strategy
 
