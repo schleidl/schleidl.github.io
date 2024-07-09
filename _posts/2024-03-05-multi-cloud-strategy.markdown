@@ -15,13 +15,16 @@ Considering the bigger picture, many companies are better off going all-in with 
 
 Some companies focus on providing what they believe are the right tools for their developers to thrive and create business value. However, I propose turning the focus to the developers themselves. Developers typically know best how to achieve their tasks when they have clear and measurable goals. Companies should listen to their developers, remove roadblocks, and provide them with the freedom, time, commitment, and learning opportunities they need.
 
-    A concise multi-cloud strategy could be:
+A concise multi-cloud strategy could be:
 
-    ACME Corp (Multi)-Cloud Strategy
+```
+ACME Corp (Multi)-Cloud Strategy
 
-    We don’t invest time and resources in preparing for a vendor lock-in scenario with a fully integrated multi-cloud setup. Instead, we focus on enhancing our teams' software delivery performance. Besides mitigating the risk of optimizing for a problem that might never occur, we can react to market changes much faster. Adopting a new cloud provider is one option we have in our portfolio.
+We don’t invest time and resources in preparing for a vendor lock-in scenario with a fully integrated multi-cloud setup. Instead, we focus on enhancing our teams' software delivery performance. Besides mitigating the risk of optimizing for a problem that might never occur, we can react to market changes much faster. Adopting a new cloud provider is one option we have in our portfolio.
 
-    We measure our software delivery performance using the four key metrics described in the book Accelerate. We improve step by step, working on mastering the 24 capabilities outlined in the book.
+We measure our software delivery performance using the four key metrics described in the book Accelerate. We improve step by step, working on mastering the 24 capabilities outlined in the book.
+
+```
 
 To emphasize the importance of focusing on developers and their productivity, consider this example: Suppose a company needs to switch cloud providers due to a price increase. A company that previously focused on creating an integrated cloud platform across multiple vendors might feel that their upfront investment is paying off. However, if this company did not invest in the continuous training and learning of its development teams, their skills may not be suited to seamlessly transition from one cloud provider to another. Additionally, these teams might struggle to adapt and learn how the new cloud provider operates.
 
