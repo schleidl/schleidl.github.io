@@ -6,7 +6,7 @@ categories: meetings, culture
 ---
 # Improving Meeting Efficiency: A Proposal
 
-The goal of this document is to propose ways to enhance the effectiveness of any meeting, with a special focus on our Core Account Team meeting.
+The goal of this document is to propose ways to enhance the effectiveness of any meeting.
 
 Throughout my career, I have observed that meetings often last as long as the time allocated to them. My hypothesis, derived from this observation, is that many meetings could be shorter by following a small set of rules, which I describe below.
 
