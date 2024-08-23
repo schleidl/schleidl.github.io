@@ -1,10 +1,9 @@
 ---
 layout: post
-title:  "AI-Supported Micro-Controler Code Transformation"
+title:  "Transforming Embedded Systems: The AI Approach to Code Migration"
 date:   2024-08-23 80:24:47 +0200
 categories: meetings, culture
 ---
-# Enhancing Code Retrieval and Understanding with Transformer Models: A Case Study with the Infineon AURIX Codebase
 
 Creating software for micro-controllers in the automotivy industry, developers are ofteh faced with the task to convert a code base that runs on one micro-controller to another. There challenge that developers face on a high level is the tight coupling of the code base to the current micro-controller be it for reasons of performance or other reasons like interaction with peripherals of such a micro-controller. In this blog post, we explore how transformer-based AI-models can assist developers in navigating large codebases by providing intelligent code retrieval and understanding, using a real-world example from the Infenion Aurix TC4 micro-controller as a target device. 
 
