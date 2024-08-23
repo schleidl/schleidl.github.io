@@ -59,7 +59,7 @@ else:
 
 ### 2. Cleaning and Preparing the Code
 
-To ensure that our model focuses on the essential parts of the code, I removed all comments from our example-file, the MULTICAN.c file. This step is crucial in making the model's job easier by eliminating non-functional elements that could introduce noise. We are also cases when the file is not utf-8 encoded. 
+To ensure that the model focuses on the essential parts of the code, I removed all comments from our example-file, the MULTICAN.c file. This step is crucial in making the model's job easier by eliminating non-functional elements that could introduce noise. We are also cases when the file is not utf-8 encoded. 
 
 ```python
 def remove_comments_from_code(code):
@@ -167,5 +167,3 @@ The transformer-based approach for code retrieval and understanding is a promisi
 While challenges remain, particularly in processing and interpreting specialized code, my solution demonstrates how AI can assist in navigating and understanding automotive software.
 
 This project opens the door to further enhancements, such as incorporating more sophisticated models or expanding the system to handle multiple files and more complex queries. As AI continues to evolve, its role in software development, particularly in specialized domains like automotive systems, will only become more significant.
-
-Do you have suggestions or questions about using AI for code retrieval and migration? We'd love to hear from you in the comments!
