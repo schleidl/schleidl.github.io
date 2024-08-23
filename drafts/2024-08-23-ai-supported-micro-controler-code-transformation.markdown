@@ -5,11 +5,13 @@ date:   2024-08-23 80:24:47 +0200
 categories: meetings, culture
 ---
 
-Creating software for micro-controllers in the automotivy industry, developers are ofteh faced with the task to convert a code base that runs on one micro-controller to another. There challenge that developers face on a high level is the tight coupling of the code base to the current micro-controller be it for reasons of performance or other reasons like interaction with peripherals of such a micro-controller. In this blog post, we explore how transformer-based AI-models can assist developers in navigating large codebases by providing intelligent code retrieval and understanding, using a real-world example from the Infenion Aurix TC4 micro-controller as a target device. 
+Creating software for microcontrollers in the automotive industry, developers are often faced with the task of converting a codebase that runs on one microcontroller to another. The challenge that developers face at a high level is the tight coupling of the codebase to the current microcontroller, whether for reasons of performance or interaction with peripherals of such a microcontroller. In this blog post, I explore how transformer-based AI models can assist developers in navigating large codebases by providing intelligent code retrieval and understanding, using a real-world example from the Infineon AURIX TC4 microcontroller as a target device.
+
+The goal of this blog post is to demonstrate the potential of using AI and transformer models for code migration, rather than presenting a fully functional tool ready for deployment. The examples provided are intended to showcase the methodology and highlight how these technologies can assist in navigating complex codebases. However, the implementation outlined here is a proof of concept, meant to illustrate the approach rather than serve as a complete, production-ready solution for developers.
 
 ## The Use Case: Migrating to Infineon AURIX TC4
 
-One of the common challenges in the automotive industry is migrating an existing codebase from one microcontroller to another. As a running example, we use the Infineon AURIX TC4 micro-controller. The process of converting a micro-controler code-base involves understanding how different peripherals, such as CAN controllers, are initialized and configured in the existing code, and then adapting this configuration to the new AURIX architecture. 
+One of the common challenges in the automotive industry is migrating an existing codebase from one microcontroller to another. As a running example, I use the Infineon AURIX TC4 microcontroller. The process of converting a microcontroller codebase involves understanding how different peripherals, such as CAN controllers, are initialized and configured in the existing code, and then adapting this configuration to the new AURIX architecture.
 
 The complexity of such a migration becomes clear when dealing with extensive legacy codebases. Developers must scan through thousands of lines of code to find relevant sections and understand their functionality. This is where a transformer-based code retrieval and understanding tool comes into play, helping streamline the migration process by providing quick access to relevant code snippets and their explanations.
 
@@ -17,7 +19,7 @@ The complexity of such a migration becomes clear when dealing with extensive leg
 
 Infineon provides a huge code-base with [examples](https://github.com/Infineon/AURIX_code_examples) for the AURIX. When working with extensive codebases such as the one for the AURIX, developers often need to quickly locate and comprehend specific code sections. For instance, configuring and initializing CAN (Controller Area Network) communication is a common task in automotive software development. However, manually searching through thousands of lines of code to find relevant configuration functions can be time-consuming and error-prone.
 
-To address this, we set out to create an intelligent system that could:
+To address this, I set out to create an intelligent system that could:
 
 1. Retrieve relevant code snippets based on a natural language query.
 2. Provide explanations or further context about the retrieved code, helping developers understand its purpose and functionality.
@@ -25,9 +27,9 @@ To address this, we set out to create an intelligent system that could:
 
 ## Solution Overview: Transformer-Based Code Retrieval
 
-We leveraged state-of-the-art transformer models, specifically tailored for code understanding and generation, to build a system as a Jupyter notebook that can respond to natural language queries with relevant code snippets and explanations. We chose the Salesforce/codet5-base model because it is specifically designed for code-related tasks, making it highly effective at understanding and generating code. Its training on multiple programming languages, including C, ensures versatility when working with diverse codebases. The model's ability to summarize and translate code is particularly useful for adapting code to new architectures, such as the Infineon AURIX TC4 microcontroller. It strikes a balance between computational efficiency and performance, making it practical for typical development environments. Additionally, its strong community support and ongoing development by Salesforce ensure reliability and continuous improvement. 
+I leveraged state-of-the-art transformer models, specifically tailored for code understanding and generation, to build a system as a Jupyter notebook that can respond to natural language queries with relevant code snippets and explanations. I chose the Salesforce/codet5-base model because it is specifically designed for code-related tasks, making it highly effective at understanding and generating code. Its training on multiple programming languages, including C, ensures versatility when working with diverse codebases. The model's ability to summarize and translate code is particularly useful for adapting code to new architectures, such as the Infineon AURIX TC4 microcontroller. It strikes a balance between computational efficiency and performance, making it practical for typical development environments. Additionally, its strong community support and ongoing development by Salesforce ensure reliability and continuous improvement.
 
-Here's a step-by-step breakdown of our approach:
+Here's a step-by-step breakdown of my approach:
 ### 1. Cloning the Infineon AURIX Repository
 
 The first step involved setting up our environment by installing all required libraries and cloning the Infineon AURIX code examples repository. The following code shows our approach with one file from that repository. 
@@ -93,9 +95,9 @@ minimal_codebase = load_minimal_code_snippets(repo_dir)
 ```
 ### 3. Embedding the Code with a Transformer Model
 
-I used a pre-trained transformer model from Hugging Face to convert the cleaned code into embeddings, a numerical representation that captures the semantic meaning of the code. This step allows to perform efficient similarity searches when a query is made.
+I used a pre-trained transformer model from Hugging Face to convert the cleaned code into embeddings, a numerical representation that captures the semantic meaning of the code. This step allows me to perform efficient similarity searches when a query is made.
 
-Further, I use FAISS because it is a highly efficient library for searching and indexing large sets of vector embeddings, making it ideal for quickly retrieving relevant code snippets based on semantic similarity. Its scalability and speed are crucial for handling the extensive codebases involved in my migration tool. Additionally, FAISS is well-supported and integrates seamlessly with transformer-based models, enhancing the overall performance of the system. 
+Further, I use FAISS because it is a highly efficient library for searching and indexing large sets of vector embeddings, making it ideal for quickly retrieving relevant code snippets based on semantic similarity. Its scalability and speed are crucial for handling the extensive codebases involved in my migration tool. Additionally, FAISS is well-supported and integrates seamlessly with transformer-based models, enhancing the overall performance of the system.
 ```python
 retriever_model_name = "sentence-transformers/all-MiniLM-L6-v2"  # Use a sentence transformer for fixed-size embeddings
 generator_model_name = "Salesforce/codet5-base"  # Use CodeT5 model for code generation tasks
@@ -125,7 +127,7 @@ index.add(minimal_code_embeddings)
 
 ### 4. Querying the Codebase
 
-With the code embedded and indexed, we implemented a function that takes a natural language query, searches for the most relevant code snippet, and then uses the transformer model to generate a response.
+With the code embedded and indexed, I implemented a function that takes a natural language query, searches for the most relevant code snippet, and then uses the transformer model to generate a response.
 
 ```python
 def query_rag(query):
