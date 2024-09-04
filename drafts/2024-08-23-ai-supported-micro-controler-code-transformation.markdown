@@ -82,13 +82,13 @@ minimal_codebase = load_minimal_code_snippets(repo_dir)
 ```
 ### 3. Embedding the Code with a Transformer Model
 
-Using AWS Bedrock, I generated embeddings for the loaded code snippets, which represent the code's semantic meaning. These embeddings, represented as numerical vectors, capture the semantic meaning of the code and allow for efficient similarity-based search. I used FAISS for embedding indexing and retrieval, ensuring high performance for large codebases.
+Using [Amazon Bedrock](https://aws.amazon.com/bedrock/), I generated embeddings for the loaded code snippets, which represent the code's semantic meaning. These embeddings, represented as numerical vectors, capture the semantic meaning of the code and allow for efficient similarity-based search. Amazon's [titan-embed-text-v2](https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html) is an ideal choice because it generates high-quality text embeddings that effectively capture semantic meaning, making it well-suited for tasks like code retrieval and similarity search. I used FAISS for embedding indexing and retrieval, ensuring high performance for large codebases.
 ```python
 def embed_text(text):
     body = json.dumps({
         "inputText": text
     })
-    response = bedrock.invoke_model(body=body, modelId="amazon.titan-embed-text-v1")
+    response = bedrock.invoke_model(body=body, modelId="amazon.titan-embed-text-v2")
     embedding = json.loads(response['body'].read())['embedding']
     return np.array(embedding)
 
