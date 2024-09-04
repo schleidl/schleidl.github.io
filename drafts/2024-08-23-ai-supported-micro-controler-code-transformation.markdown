@@ -88,7 +88,7 @@ def embed_text(text):
     body = json.dumps({
         "inputText": text
     })
-    response = bedrock.invoke_model(body=body, modelId="amazon.titan-embed-text-v2")
+    response = bedrock.invoke_model(body=body, modelId="amazon.titan-embed-text-v1")
     embedding = json.loads(response['body'].read())['embedding']
     return np.array(embedding)
 
