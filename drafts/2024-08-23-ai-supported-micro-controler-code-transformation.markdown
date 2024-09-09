@@ -36,6 +36,7 @@ In the context of developing and deploying AI-based solutions, Amazon SageMaker 
 Integrating these two services I created Jupyter Notebook on Amazon SageMaker interacting with respective AI-models hosted on Amazon Bedrock. I would like to stress that the code presented below is self-contained. Combining all code blocks in one Jupyter Notebook, you are able to recreate the my Jupyter notebook. Be aware that you need to enable all AI-models used in the code below you need to grant access in Amazon Bedrock. 
 
 ![alt text](image.png)
+
 Diagram showing the interaction between Amazon SageMaker and Amazon Bedrock​
 
 Here's a step-by-step breakdown of my approach:
