@@ -29,6 +29,15 @@ To address this, I set out to create an intelligent system that could:
 
 I leveraged state-of-the-art transformer models, specifically tailored for code understanding and generation, to build a system within a Jupyter notebook that can respond to natural language queries with relevant code snippets and explanations. I chose the Anthropic Claude V2 model because it is specifically designed for code-related tasks, making it highly effective at understanding and generating code. Its training on multiple programming languages, including C, ensures versatility when working with diverse codebases. The model's ability to summarize and translate code is particularly useful for adapting code to new architectures, such as the Infineon AURIX TC4 microcontroller. It strikes a balance between computational efficiency and performance, making it practical for typical development environments.
 
+### Use of Amazon SageMaker and Amazon Bedrock
+
+In the context of developing and deploying AI-based solutions, Amazon SageMaker and Amazon Bedrock play complementary roles. While SageMaker provides the infrastructure for managing the development environment, specifically handling Jupyter notebook instances, Bedrock offers a platform for interacting with various state-of-the-art generative AI models.
+
+Integrating these two services I created Jupyter Notebook on Amazon SageMaker interacting with respective AI-models hosted on Amazon Bedrock. I would like to stress that the code presented below is self-contained. Combining all code blocks in one Jupyter Notebook, you are able to recreate the my Jupyter notebook. Be aware that you need to enable all AI-models used in the code below you need to grant access in Amazon Bedrock. 
+
+![alt text](image.png)
+Diagram showing the interaction between Amazon SageMaker and Amazon Bedrock​
+
 Here's a step-by-step breakdown of my approach:
 ### 1. Cloning the Infineon AURIX Repository
 
