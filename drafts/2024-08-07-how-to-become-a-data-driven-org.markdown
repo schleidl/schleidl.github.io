@@ -1,9 +1,3 @@
----
-layout: post
-title:  "Every org can do everything - the speed to deliver value is what matters"
-date:   2024-08-07 10:24:47 +0200
-categories: Organizational structure, IT strategy
----
 Being data-driven is a property many organizations pursue these days. Along with that comes the goal of building so-called data-products that are of value to the customers of the respective buinsesses. There are many ways organizations can achieve this. One of the ways some organizations pursue is to rely on creating the technological foundations. They have the vision of Building a data-lake with the goal of hosting all business-related data first is one of these ways. Using these data-lakes development teams are enabled to create so called data-products on top of them, so the plan. 
 
 This is done with a good intention, yet there is one more important aspect to consider. Tools like data-lakes like any tool can be used the right way or the wrong way. In addition building a data-lake first bears the risk of taking very long to deliver value to customers. This comes from the fact, that building tools for the purpose of building them can lead to projects that building a tool aiming at exactly the wrong use cases that are not relevant to customers. Which is only discovered after the first development teams try to use the data-lake to build data-products on them. 
