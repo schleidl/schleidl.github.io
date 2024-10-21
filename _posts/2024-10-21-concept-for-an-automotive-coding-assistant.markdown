@@ -4,8 +4,6 @@ title:  "The Future of Automotive Software: Introducing the Automotive Coding As
 date:   2024-10-21 10:24:47 +0200
 categories: generative-ai, automotive, assistant
 ---
-# The Future of Automotive Software: Introducing the Automotive Coding Assistant
-
 The automotive industry is in the midst of a transformation. As vehicles become smarter and more reliant on software, developers are increasingly at the center of innovation. The challenge? Developing automotive software requires compliance with stringent safety standards like ISO 26262, ASPICE, and AUTOSAR. This article details the concept of an automotive embedded coding assistant and how it can support developers in creating compliant embedded C/C++ code, following requirements from standards like AUTOSAR, which reference MISRA C guidelines.
 
 The need for an automotive coding assistant is driven by several converging trends. The automotive sector is transitioning from traditional mechanical engineering to a software-defined vehicle (SDV) model, where a car's value is increasingly defined by its software features. This shift demands scalable development practices to manage the complexity of autonomous driving, electric powertrains, and advanced connectivity. Recent advances in AI and machine learning now enable assistants to deeply understand automotive software, helping developers focus on innovation rather than repetitive tasks or extensive documentation searches.
