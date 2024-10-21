@@ -2,7 +2,7 @@
 layout: post
 title:  "The Future of Automotive Software: Introducing the Automotive Coding Assistant"
 date:   2024-10-21 10:24:47 +0200
-categories: generative ai, automotive, assistant
+categories: generative-ai, automotive, assistant
 ---
 # The Future of Automotive Software: Introducing the Automotive Coding Assistant
 
