@@ -1,9 +1,4 @@
----
-layout: post
-title:  "Every org can do everything - the speed to deliver value is what matters"
-date:   2024-05-07 80:24:47 +0200
-categories: meetings, culture
----
+
 # Improving Meeting Efficiency: A Proposal
 
 The goal of this document is to propose ways to enhance the effectiveness of any meeting.
