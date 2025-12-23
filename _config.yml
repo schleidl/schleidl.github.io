@@ -36,6 +36,10 @@ google_analytics: G-774R7YQQVY
 # theme: minima
 remote_theme: jekyll/minima
 
+# Header navigation pages
+header_pages:
+  - about.markdown
+
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
