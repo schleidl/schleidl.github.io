@@ -14,60 +14,64 @@ Marc Brooker rightly emphasizes that success comes from iteration, context accum
 
 But as soon as we make natural language the primary tool for specification, we encounter a central problem: Conversations in natural language are inherently ambiguous.
 
-The Emergence of a Ubiquitous Language
+## The Emergence of a Ubiquitous Language
 
 When humans discuss a problem together, ambiguous terms must be clarified to enable effective communication within the current domain. We all know this from meetings: Someone says "customer" but means "account." Another says "order" but refers only to the "shopping cart."
 
 In my experience, clarification happens in an iterative process: If a term is used for the first time and interpreted differently by different conversation partners, a need arises to explicitly define its meaning for the ongoing discussion. Through this step-by-step definition of terms for a concrete problem area, a common language emerges that is used by all participants.
 
-In Domain-Driven Design (DDD), this common language is called Ubiquitous Language. It applies within a delimited area, the so-called Bounded Context.
+In Domain-Driven Design (DDD), this common language is called Ubiquitous Language. It applies within a delimited area, the so-called Bounded Context. A bounded context in DDD is a boundary within which a specific domain model and ubiquitous language apply consistently. For example, in an e-commerce system, an Order Management bounded context defines what an Order means and enforces its lifecycle rules, while Payment and Shipping use different models and terminology for the same real-world concept. 
 
-Handling the ambiguity of natural language was reserved exclusively for humans for a long time. However, with the advent of LLMs and spec-driven development, it becomes possible to include machines in this clarification process as well. LLMs can help development teams detect such ambiguities early on by making them explicit and clarifying them within the respective Bounded Context. They act like a new team member who unreservedly asks: "When you say 'user' here, do you mean the logged-in administrator or the end customer?"
+Handling the ambiguity of natural language was long reserved exclusively for humans. With the advent of LLMs and spec-driven development, machines can now participate in this clarification process by making ambiguities explicit within a given Bounded Context, asking in the Order Management context whether the term “order” refers to a customer commitment at checkout or to a payment or shipping artifact used in downstream contexts.
 
-Collaborative Clarification as Engineering Work
+## Collaborative Clarification as Engineering Work
 
-This leads to a new interaction loop in software development, which I view as genuine engineering work and not administrative overhead:
+This leads to a new interaction loop in software development that I consider genuine engineering work rather than administrative overhead. With tools like Kiro, work on a new feature often starts with a simple prompt that captures the initial idea and intent in natural language, which Kiro then elaborates into a specification.
 
-Starting Point: The human creates a specification or description in natural language.
+From there, ambiguities surface quickly. The LLM supports the team by highlighting terms that can be interpreted in more than one way in the current bounded context, such as whether an “order” refers to a customer commitment in Order Management or to a payment or shipping concept elsewhere. The human clarifies the intent, and once that clarification is made, the terminology becomes stable. These agreed-upon terms act as anchors in all subsequent artifacts, making inconsistencies visible as soon as they appear.
 
-Detection: The LLM scans the text and makes ambiguities visible. It identifies terms that allow for multiple plausible interpretations in the current context.
+## Practical Application with a Custom Kiro Power
 
-Clarification: The human clarifies the intention.
+To translate this theoretical approach into practice, I developed the **Spec Ambiguity Resolver** - a Kiro Power that helps establish and maintain a ubiquitous language throughout the entire development lifecycle.
 
-The LLM uses this now stable terminology as semantic anchors. Once a definition is set, any deviation or inconsistency in later documents becomes detectable. It is important to understand here: The language exists in the context of the work, not in a separate, dusty glossary document that no one reads. The definitions live where the work is being done.
+The power is active during all phases of spec-driven development: specification writing, design document creation, task breakdown, and implementation. It works by maintaining a living glossary file (`domain-terms.md`) that serves as the single source of truth for the project's ubiquitous language.
 
-Practical Application with a Custom Kiro Power
+Let's return to our Order Management example to see how this works in practice. When the team starts writing their specification and uses the term "order," the power immediately flags this as potentially ambiguous:
 
-To translate this theoretical approach into practice and reduce ambiguity across all artifacts, I have developed my own Kiro Power.
+> "I noticed the term 'order' appears in the specification. To establish our ubiquitous language, we should define what 'order' means in this project context so all participants - including me as the coding AI - share the same understanding.
+>
+> Based on the context, I propose this definition:
+>
+> **Order**: A customer commitment created at checkout in the Order Management bounded context, including items, quantities, pricing, and delivery address. This represents the customer's intent to purchase.
+>
+> Does this definition accurately capture what 'order' means in your project? Would you like to adjust it before I add it to our ubiquitous language?"
 
-This Power is specifically designed to work with Kiro in Spec-Mode. It takes effect where the actual work happens: in specification documents, design drafts, and backlog items.
+This interaction is crucial: the power never autonomously creates definitions. It proposes them based on context and waits for explicit human approval. This ensures the ubiquitous language represents genuine semantic agreement, not just AI-generated documentation.
 
-The Kiro Power encapsulates three essential elements:
+Once approved, the definition is added to `domain-terms.md`. From that point forward, the power ensures consistency: if someone later uses "order" to mean something different (like a payment record or shipping manifest), it flags the inconsistency and prompts clarification. Should the team discover they need separate concepts, they can establish distinct terms like "Customer Order" and "Fulfillment Order," each with its own precise definition within its bounded context.
 
-Steering Instructions with a clear focus on ambiguity detection (instead of pure text generation).
+The power doesn't impose a rigid formal language. Instead, it helps the team build their own shared vocabulary organically as they work, making ambiguities visible before they propagate into code. The result is that humans and AI collaborate on clarification, while domain semantics remain stable and traceable from requirements through implementation.
 
-Context on previously clarified domain terms.
+## From Ubiquitous Language to Implementation
 
-Activation Logic, so that it is deployed specifically only during spec-driven work.
+Why invest this effort in establishing a ubiquitous language before writing the first line of code? Because precise semantic agreement fundamentally constrains implementation decisions - in a positive sense.
 
-In the active state, the Power supports Kiro in recognizing ambiguous or overloaded terms and uncovering inconsistent terminology across different documents. It proactively prompts the human to clarify the intention before the ambiguity propagates into the implementation.
+When the entire team - including AI coding agents - shares an explicit understanding of what "order" means in the Order Management context, entire classes of architectural mistakes become impossible. The AI agent implementing the checkout flow knows exactly what data structure to create, what lifecycle states are valid, and which operations belong to this concept versus others like payment processing or shipping.
 
-In doing so, the Power does not define a rigid formal language or grammar that would hinder the creative flow. Instead, it helps maintain a consistent Ubiquitous Language across all spec-driven artifacts. The result is that humans and LLMs work together on clarification, while domain semantics remain stable over time.
+This semantic precision enables several critical capabilities:
 
-From Ubiquitous Language to Implementation
+**Refactoring with Confidence**: When "order" has a precise definition in `domain-terms.md`, we know exactly which code belongs together. Refactoring becomes safer because the boundaries between concepts are explicit. We can confidently move order validation logic into the Order class, knowing it won't accidentally include payment processing concerns.
 
-Why is this effort before the first line of code so important? Because a defined meaning massively constrains implementation decisions—in a positive sense.
+**AI-Generated Code Quality**: When an AI coding agent reads the ubiquitous language before implementation, it generates code that accurately reflects the domain model. Instead of generic class names like `DataProcessor` or `RequestHandler`, it creates `CustomerOrder` with methods like `confirmPurchaseIntent()` that mirror the team's shared vocabulary.
 
-When it is clearly defined what a term means and what it does not, many wrong turns in architecture fall away. Precise language supports:
+**Long-term Maintainability**: Code that speaks the domain language remains comprehensible as the team evolves. A developer joining the project six months later can read `domain-terms.md`, understand the ubiquitous language, and immediately recognize those same terms throughout the codebase. The semantic agreement established during specification persists into the implementation.
 
-Refactoring: We know exactly which concepts belong together.
+## Conclusion: Precision Before Code
 
-Platform-specific Specialization: The model can generate more precise code for specific frameworks because the functional requirement is unambiguous.
+The greatest leverage in modern software development with AI lies not in accelerating typing, but in establishing semantic agreement before implementation begins. Kiro has already taken a giant leap in this direction with its spec-driven development workflow, which structures the development process around creating clear specifications, design documents, and task lists before any code is written. This blog post explored how we can extend this foundation by establishing a ubiquitous language - a shared vocabulary that ensures all project participants, including AI coding agents, share the same understanding of domain terms throughout the entire development lifecycle. Reducing ambiguity through a ubiquitous language is genuine design work - the mandatory prerequisite for safe automation.
 
-Long-term Maintainability: The code reflects the language of the domain.
+LLMs are amplifiers. When we give an AI agent ambiguous instructions where "order" could mean a dozen different things, it amplifies the chaos by generating code that reflects our confusion. But when we first establish that "order" means precisely "a customer commitment in the Order Management context," the AI amplifies our clarity by generating code that accurately implements this shared understanding.
 
-Conclusion: Precision before Code
+Spec-driven development with tools like the Spec Ambiguity Resolver ultimately means using the machine as a partner in thinking more precisely. The AI doesn't just execute our specifications - it participates in refining them by making ambiguities visible, proposing definitions for our review, and maintaining consistency across the entire project lifecycle.
 
-The greatest leverage in modern software development with AI lies not in accelerating typing, but in the phase before implementation. Reducing ambiguity is a design activity and the mandatory prerequisite for safe automation.
-
-LLMs are amplifiers. If we feed in unspecific, ambiguous instructions, they amplify the chaos. However, if we use them to create clarity and precision, they amplify the quality of our software architecture. Spec-driven development ultimately means: We use the machine to force ourselves to think more precisely.
+The result is software where the code speaks the same language as the specifications, where AI agents and human developers share the same semantic foundation, and where the ubiquitous language established in early conversations persists all the way through to implementation. This is how we move from natural language programming to truly collaborative software development.
