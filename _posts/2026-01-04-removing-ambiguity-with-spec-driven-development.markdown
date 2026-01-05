@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "From Natural Language to Ubiquitous Language — Reducing Ambiguity in Specifications with LLMs"
+title:  "How Creating a Ubiquitous Language Ensures AI Builds What You Actually Want"
 date:   2026-01-04 10:00:00 +0200
 categories: Software Engineering, AI, Spec-Driven Development
 ---
-Yesterday, I read Marc Brooker's blog post on Natural Language Programming, which I highly recommend to anyone wanting to understand how programming and software development are currently evolving. One analogy Marc uses to describe the future of programming particularly stuck with me: With a spec-driven development approach, it becomes possible to actively include computers in the discussion about the design of a software system.
+Recently, I read [Marc Brooker's blog post on Natural Language Programming](https://brooker.co.za/blog/2025/12/16/natural-language.html), which I highly recommend to anyone wanting to understand how programming and software development are currently evolving. One analogy Marc uses to describe the future of programming particularly stuck with me: With a spec-driven development approach, it becomes possible to actively include computers in the discussion about the design of a software system.
 
 In this view, LLMs are no longer just code generators. They become participants in a discussion about how a system should behave. Spec-driven development is thus less of a new development methodology and more of a technological extension of existing human workflows.
 
@@ -32,7 +32,7 @@ From there, ambiguities surface quickly. The LLM supports the team by highlighti
 
 ## Practical Application with a Custom Kiro Power
 
-To translate this theoretical approach into practice, I developed the **Spec Ambiguity Resolver** - a Kiro Power that helps establish and maintain a ubiquitous language throughout the entire development lifecycle.
+To translate this theoretical approach into practice, I developed the [**Spec Ambiguity Resolver**](https://github.com/schleidl/spec-ambiguity-resolver-kiro-power) - a Kiro Power that helps establish and maintain a ubiquitous language throughout the entire development lifecycle.
 
 The power is active during all phases of spec-driven development: specification writing, design document creation, task breakdown, and implementation. It works by maintaining a living glossary file (`domain-terms.md`) that serves as the single source of truth for the project's ubiquitous language.
 
