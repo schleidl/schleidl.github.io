@@ -8,7 +8,7 @@ Recently, I read [Marc Brooker's blog post on Natural Language Programming](http
 
 In this view, LLMs are no longer just code generators. They become participants in a discussion about how a system should behave. Spec-driven development is thus less of a new development methodology and more of a technological extension of existing human workflows.
 
-Successful software systems are rarely created by someone immediately typing perfect code into an editor. They emerge from communication—through specifications, user stories, and shared discussions at the whiteboard. The formal implementation in code is often just the last step of a long, creative process.
+Successful software systems are rarely created by someone immediately typing perfect code into an editor. They emerge from communication through specifications, user stories, and shared discussions at the whiteboard. The formal implementation in code is often just the last step of a long, creative process.
 
 Marc Brooker rightly emphasizes that success comes from iteration, context accumulation, and collaboration. What is new is that we can now use technology to let computers participate in the very same conversations humans already have when describing how a software system should behave. We position LLMs here as active conversation partners and critical reviewers, not as autonomous authors who blindly take work off our hands.
 
@@ -32,13 +32,13 @@ From there, ambiguities surface quickly. The LLM supports the team by highlighti
 
 ## Practical Application with a Custom Kiro Power
 
-To translate this theoretical approach into practice, I developed the [**Spec Ambiguity Resolver**](https://github.com/schleidl/spec-ambiguity-resolver-kiro-power) - a Kiro Power that helps establish and maintain a ubiquitous language throughout the entire development lifecycle.
+To translate this theoretical approach into practice, I developed the [**Spec Ambiguity Resolver**](https://github.com/schleidl/spec-ambiguity-resolver-kiro-power) a Kiro Power that helps establish and maintain a ubiquitous language throughout the entire development lifecycle.
 
 The power is active during all phases of spec-driven development: specification writing, design document creation, task breakdown, and implementation. It works by maintaining a living glossary file (`domain-terms.md`) that serves as the single source of truth for the project's ubiquitous language.
 
 Let's return to our Order Management example to see how this works in practice. When the team starts writing their specification and uses the term "order," the power immediately flags this as potentially ambiguous:
 
-> "I noticed the term 'order' appears in the specification. To establish our ubiquitous language, we should define what 'order' means in this project context so all participants - including me as the coding AI - share the same understanding.
+> "I noticed the term 'order' appears in the specification. To establish our ubiquitous language, we should define what 'order' means in this project context so all participants, including me as the coding AI, share the same understanding.
 >
 > Based on the context, I propose this definition:
 >
@@ -54,9 +54,9 @@ The power doesn't impose a rigid formal language. Instead, it helps the team bui
 
 ## From Ubiquitous Language to Implementation
 
-Why invest this effort in establishing a ubiquitous language before writing the first line of code? Because precise semantic agreement fundamentally constrains implementation decisions - in a positive sense.
+Why invest this effort in establishing a ubiquitous language before writing the first line of code? Because precise semantic agreement fundamentally constrains implementation decisions in a positive sense.
 
-When the entire team - including AI coding agents - shares an explicit understanding of what "order" means in the Order Management context, entire classes of architectural mistakes become impossible. The AI agent implementing the checkout flow knows exactly what data structure to create, what lifecycle states are valid, and which operations belong to this concept versus others like payment processing or shipping.
+When the entire team, including AI coding agents, shares an explicit understanding of what "order" means in the Order Management context, entire classes of architectural mistakes become impossible. The AI agent implementing the checkout flow knows exactly what data structure to create, what lifecycle states are valid, and which operations belong to this concept versus others like payment processing or shipping.
 
 This semantic precision enables several critical capabilities:
 
@@ -68,10 +68,10 @@ This semantic precision enables several critical capabilities:
 
 ## Conclusion: Precision Before Code
 
-The greatest leverage in modern software development with AI lies not in accelerating typing, but in establishing semantic agreement before implementation begins. Kiro has already taken a giant leap in this direction with its spec-driven development workflow, which structures the development process around creating clear specifications, design documents, and task lists before any code is written. This blog post explored how we can extend this foundation by establishing a ubiquitous language - a shared vocabulary that ensures all project participants, including AI coding agents, share the same understanding of domain terms throughout the entire development lifecycle. Reducing ambiguity through a ubiquitous language is genuine design work - the mandatory prerequisite for safe automation.
+The greatest leverage in modern software development with AI lies not in accelerating typing, but in establishing semantic agreement before implementation begins. Kiro has already taken a giant leap in this direction with its spec-driven development workflow, which structures the development process around creating clear specifications, design documents, and task lists before any code is written. This blog post explored how we can extend this foundation by establishing a ubiquitous language, a shared vocabulary that ensures all project participants, including AI coding agents, share the same understanding of domain terms throughout the entire development lifecycle. Reducing ambiguity through a ubiquitous language is genuine design work, the mandatory prerequisite for safe automation.
 
 LLMs are amplifiers. When we give an AI agent ambiguous instructions where "order" could mean a dozen different things, it amplifies the chaos by generating code that reflects our confusion. But when we first establish that "order" means precisely "a customer commitment in the Order Management context," the AI amplifies our clarity by generating code that accurately implements this shared understanding.
 
-Spec-driven development with tools like the Spec Ambiguity Resolver ultimately means using the machine as a partner in thinking more precisely. The AI doesn't just execute our specifications - it participates in refining them by making ambiguities visible, proposing definitions for our review, and maintaining consistency across the entire project lifecycle.
+Spec-driven development with tools like the Spec Ambiguity Resolver ultimately means using the machine as a partner in thinking more precisely. The AI doesn't just execute our specifications, it participates in refining them by making ambiguities visible, proposing definitions for our review, and maintaining consistency across the entire project lifecycle.
 
 The result is software where the code speaks the same language as the specifications, where AI agents and human developers share the same semantic foundation, and where the ubiquitous language established in early conversations persists all the way through to implementation. This is how we move from natural language programming to truly collaborative software development.
